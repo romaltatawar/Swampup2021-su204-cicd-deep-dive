@@ -23,9 +23,11 @@ Pipeline 2: app_prod_pipeline
 ## Prerequisites
 
 * Github account. Note the following and plan accordingly.
+
 ** You would be forking a GitHub Repository to your account.
 ** Webhooks would be automatically created on these Repositories when the pipeline is configured.
 ** Create an API token (if you do not already have one) and keep it handy. Make sure the token you create has the permission scope as listed in here under the Token Permissions section.
+
 * A SaaS Instance of JFrog. This will be provided as part of your enrollment to the Training class.
 
 ## Instructions
@@ -57,9 +59,11 @@ In this step, you will add your Github and Artifactory credentials so that your 
 
 Go to **Administration View | Pipelines | Integrations** and create these Integrations.
 * Github
+
 ** Follow these instructions to create a Github integration. Enter github_int in the “Name” field. Please note that you will need to use the previously created API token to create this integration
 
 * Artifactory
+
 ** Follow these instructions to create an Artifactory integration. Enter artifactory_int in the “Name” field. Please note that you can click on “Get API Key” to automatically populate the API Key.
 
 You will see these integrations in the table as shown below:
