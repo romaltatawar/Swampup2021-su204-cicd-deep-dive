@@ -102,7 +102,7 @@ When a repository is added as a pipeline source, webhooks are added to the sourc
 
 You can now navigate to **Application View | Pipelines | MyPipelines** to see the pipelines that were created - **app_dev_pipeline_su204** and **app_prod_pipeline_su204**.
 
-![View Pipelines](https://i.ibb.co/vYXmf1x/imageE.png)
+![View Pipelines](https://i.ibb.co/fk5Gy1K/imageEE.png)
 
 ### Step 7:  Execute the dev pipeline
 
