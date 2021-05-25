@@ -5,19 +5,10 @@ resources:
   - name: app_repo
     type: GitRepo
     configuration:
-      gitProvider: {{ .Values.gitIntegration }}                      # <-- replace with your integration
-      path: {{ .Values.gitRepositoryPath }}    # <-- replace with your repository name
+      gitProvider: {{ .Values.gitIntegration }}                      
+      path: {{ .Values.gitRepositoryPath }}    
       branches:
         include: master
-
-  # - name: app_docker_img
-  #   type: Image
-  #   configuration:
-  #     registry: {{ .Values.artifactoryIntegration }}                                # <-- replace with your artifactory integration
-  #     sourceRepository: {{ .Values.sourceRepository }}               # <-- required if registry is Artifactory
-  #     imageName: {{ .Values.artifactoryUrl }}/{{ .Values.sourceRepository }}/{{ .Values.imageName }}  # < -- replace with your image path and name
-  #     imageTag: latest
-  #     autoPull: false
 
   - name: app_buildinfo
     type: BuildInfo
@@ -38,20 +29,20 @@ pipelines:
           affinityGroup: docker_group
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: {{ .Values.artifactoryUrl }}/{{ .Values.sourceRepository }}/{{ .Values.imageName }}  # replace with your image path and name
+          dockerImageName: {{ .Values.artifactoryUrl }}/{{ .Values.sourceRepository }}/{{ .Values.imageName }}  
           dockerImageTag: ${run_number}
           inputResources:
             - name: app_repo
           integrations:
-            - name: {{ .Values.artifactoryIntegration }}                            # <-- replace with your artifactory integration
-
+            - name: {{ .Values.artifactoryIntegration }}         
+            
       - name: app_push
         type: DockerPush
         configuration:
           affinityGroup: docker_group
           targetRepository: {{ .Values.sourceRepository }}
           integrations:
-            - name: {{ .Values.artifactoryIntegration }}                            # <-- replace with your artifactory integration
+            - name: {{ .Values.artifactoryIntegration }}                            
           inputSteps:
             - name: app_build
 
@@ -93,5 +84,3 @@ pipelines:
             #- ls -latr
           onExecute:
             - docker run {{ .Values.artifactoryUrl }}/{{ .Values.prodRepository }}/{{ .Values.imageName }}:$res_app_promoted_buildinfo_buildNumber
-            #- chmod +x app
-            #- ./app
