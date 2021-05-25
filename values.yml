@@ -1,7 +1,7 @@
 gitIntegration: github_int
-gitRepositoryPath: jfrog/Swampup2021-su204-cicd-deep-dive
+gitRepositoryPath: jfrog/Swampup2021-su204-cicd-deep-dive  # replace jfrog with your username or org name
 artifactoryIntegration: artifactory_int
 imageName: app_docker_image
-artifactoryUrl: swampup204.jfrog.io
-sourceRepository: su204-docker-staging-local
+artifactoryUrl: swampup204.jfrog.io   # replace swampup with your server name
+sourceRepository: su204-docker-staging-local  
 prodRepository: su204-docker-prod-local
