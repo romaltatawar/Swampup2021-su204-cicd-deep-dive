@@ -156,3 +156,5 @@ Create a UI screenshot of the Pipeline of Pipelines view by clicking on **My Pip
 Once done follow the instructions provided by the instructor to complete the challenge.
 
 ![Pipeline of Pipelines view](https://i.ibb.co/z2nHhd4/imageL.png)
+
+
